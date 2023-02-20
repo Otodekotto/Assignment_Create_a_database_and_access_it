@@ -38,7 +38,7 @@ namespace Assignment_Create_a_database_and_access_it
             //    Console.WriteLine(item);
             //}
 
-            var list = customerRepositoryv2.GetHighestSpenders();
+            var list = customerRepository.GetFavoriteGenre(12);
             foreach (var item in list)
             {
                 Console.WriteLine(item);

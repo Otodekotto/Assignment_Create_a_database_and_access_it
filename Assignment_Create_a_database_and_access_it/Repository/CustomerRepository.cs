@@ -188,5 +188,34 @@ namespace Assignment_Create_a_database_and_access_it.Repository
             }
 
         }
+
+        public IEnumerable<CustomerGenre> GetFavoriteGenre(int id)
+        {
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            var sql = "SELECT TOP 1 WITH TIES Genre.Name," +
+                " Count(*) as CustomerCount FROM (Customer" +
+                " INNER JOIN Invoice" +
+                " ON Customer.CustomerId = Invoice.CustomerId" +
+                " INNER JOIN InvoiceLine" +
+                " ON Invoice.InvoiceId = InvoiceLine.InvoiceId" +
+                " INNER JOIN Track" +
+                " ON InvoiceLine.TrackId = track.TrackId" +
+                " INNER JOIN Genre" +
+                " ON Track.GenreId = Genre.GenreId)" +
+                " WHERE Customer.CustomerId = @CustomerId " +
+                " GROUP BY Genre.Name" +
+                " ORDER BY CustomerCount DESC ";
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@CustomerId", id );
+            using var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                yield return new CustomerGenre(
+                    reader.GetString(0)
+                );
+            }
+        }
     } 
 }
