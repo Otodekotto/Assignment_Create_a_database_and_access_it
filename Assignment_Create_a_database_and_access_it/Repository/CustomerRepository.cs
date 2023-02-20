@@ -42,7 +42,15 @@ namespace Assignment_Create_a_database_and_access_it.Repository
             {
                 using var connection = new SqlConnection(ConnectionString);
                 connection.Open();
-                var sql = "UPDATE Customer SET FirstName = @FirstName , LastName = @LastName , Country = @Country, PostalCode  = @PostalCode, Phone = @Phone, Email = @Email WHERE CustomerId = @CustomerId";
+                var sql = "UPDATE Customer " +
+                    "SET FirstName = @FirstName , " +
+                    "LastName = @LastName , " +
+                    "Country = @Country, " +
+                    "PostalCode  = @PostalCode, " +
+                    "Phone = @Phone, " +
+                    "Email = @Email" +
+                    " WHERE CustomerId = @CustomerId";
+
                 using var command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@CustomerId", entity.Id);
                 command.Parameters.AddWithValue("@FirstName", entity.FirstName);
@@ -161,6 +169,24 @@ namespace Assignment_Create_a_database_and_access_it.Repository
             }
             else
                 return null;
+        }
+
+        public IEnumerable<CustomerCountry> GetCustomerPerCountry()
+        {
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            var sql = "SELECT Country, Count(*) as CustomerCount FROM Customer GROUP BY Country ORDER BY CustomerCount DESC ";
+
+            using var command = new SqlCommand(sql, connection);
+            using SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                yield return new CustomerCountry(
+                    reader.GetString(0),
+                    reader.GetInt32(1)
+                    );
+            }
+
         }
     } 
 }

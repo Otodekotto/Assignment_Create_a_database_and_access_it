@@ -11,5 +11,7 @@ namespace Assignment_Create_a_database_and_access_it.Repository
     {
         public IEnumerable<Customer> GetCustomerByName(string name);
         public IEnumerable<Customer> GetCustomerPage(int offset , int limit);
+
+        public IEnumerable<CustomerCountry> GetCustomerPerCountry();
     }
 }

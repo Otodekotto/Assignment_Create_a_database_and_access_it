@@ -29,9 +29,15 @@ namespace Assignment_Create_a_database_and_access_it
             //    Console.WriteLine(item);
             //}
 
-            customerRepository.Update(new Customer(60,"James" , "Ketchup" , "England" , "320 59" , "333 444 22 11", "Jamesbond@pop.com"));
+            //customerRepository.Update(new Customer(60,"James" , "Ketchup" , "England" , "320 59" , "333 444 22 11", "Jamesbond@pop.com"));
 
-            var list = customerRepository.GetAll().ToList();
+            //var list = customerRepository.GetAll().ToList();
+            //foreach (var item in list)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            var list = customerRepository.GetCustomerPerCountry();
             foreach (var item in list)
             {
                 Console.WriteLine(item);
