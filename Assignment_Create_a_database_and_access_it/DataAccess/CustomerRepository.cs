@@ -13,6 +13,11 @@ namespace Assignment_Create_a_database_and_access_it.Repository
     {
         public string ConnectionString { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Adds a customer to the database.
+        /// </summary>
+        /// <param name="entity">A customer entity</param>
+        /// <returns>Boolean - True if successful</returns>
         public bool Add(Customer entity)
         {
             try
@@ -35,7 +40,11 @@ namespace Assignment_Create_a_database_and_access_it.Repository
                 return false;
             }
         }
-
+        /// <summary>
+        /// Updates a customer in the database.
+        /// </summary>
+        /// <param name="entity">A customer entity</param>
+        /// <returns>Boolean - True if successful</returns>
         public bool Update(Customer entity)
         {
             try
@@ -67,7 +76,10 @@ namespace Assignment_Create_a_database_and_access_it.Repository
                 return false;
             }
         }
-
+        /// <summary>
+        /// Gets all customers in the database.
+        /// </summary>
+        /// <returns>IEnumerable containing all the customers</returns>
         public IEnumerable<Customer> GetAll()
         {
             using var connection = new SqlConnection(ConnectionString);
@@ -88,7 +100,11 @@ namespace Assignment_Create_a_database_and_access_it.Repository
                 );
             }
         }
-
+        /// <summary>
+        /// Gets a customer by given id.
+        /// </summary>
+        /// <param name="id">The given id.</param>
+        /// <returns>A customer</returns>
         public Customer GetById(int id)
         {
             using var connection = new SqlConnection(ConnectionString);
@@ -114,7 +130,11 @@ namespace Assignment_Create_a_database_and_access_it.Repository
             }
             return result;
         }
-
+        /// <summary>
+        /// Gets customer or customers based on string matching first name.
+        /// </summary>
+        /// <param name="name">The string </param>
+        /// <returns>IEnumerable containing the customers.</returns>
         public IEnumerable<Customer> GetCustomerByName(string name)
         {
             using var connection = new SqlConnection(ConnectionString);
@@ -137,7 +157,12 @@ namespace Assignment_Create_a_database_and_access_it.Repository
                 );
             }
         }
-
+        /// <summary>
+        /// Gets a page of customers based on specific limit and offset.
+        /// </summary>
+        /// <param name="offset">The offset, how many rows skipped.</param>
+        /// <param name="limit">The limit of how many records per page.</param>
+        /// <returns></returns>
         public IEnumerable<Customer> GetCustomerPage(int offset , int limit)
         {
             using var connection = new SqlConnection(ConnectionString);
@@ -160,7 +185,7 @@ namespace Assignment_Create_a_database_and_access_it.Repository
                 );
             }
         }
-
+       
         private string? GetString(SqlDataReader reader, int i)
         {
             if (!reader.IsDBNull(i))
@@ -170,7 +195,10 @@ namespace Assignment_Create_a_database_and_access_it.Repository
             else
                 return null;
         }
-
+        /// <summary>
+        /// Gets the number of customers from each country in descending order.
+        /// </summary>
+        /// <returns>IEnumerable containing customerCountry objects.</returns>
         public IEnumerable<CustomerCountry> GetCustomerPerCountry()
         {
             using var connection = new SqlConnection(ConnectionString);
@@ -188,7 +216,11 @@ namespace Assignment_Create_a_database_and_access_it.Repository
             }
 
         }
-
+        /// <summary>
+        /// Gets a specific customers favorite genre:
+        /// </summary>
+        /// <param name="id">Id of the customer.</param>
+        /// <returns>IEnumerable containig genre or genres in case of a tie.</returns>
         public IEnumerable<CustomerGenre> GetFavoriteGenre(int id)
         {
             using var connection = new SqlConnection(ConnectionString);

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JDuong\\source\\repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj": {}
+    "C:\\Users\\RStemp\\Source\\Repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JDuong\\source\\repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj": {
+    "C:\\Users\\RStemp\\Source\\Repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JDuong\\source\\repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj",
+        "projectUniqueName": "C:\\Users\\RStemp\\Source\\Repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj",
         "projectName": "Assignment_Create_a_database_and_access_it",
-        "projectPath": "C:\\Users\\JDuong\\source\\repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj",
-        "packagesPath": "C:\\Users\\JDuong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JDuong\\source\\repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\obj\\",
+        "projectPath": "C:\\Users\\RStemp\\Source\\Repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it.csproj",
+        "packagesPath": "C:\\Users\\RStemp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RStemp\\Source\\Repos\\Assignment_Create_a_database_and_access_it\\Assignment_Create_a_database_and_access_it\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\JDuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\RStemp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

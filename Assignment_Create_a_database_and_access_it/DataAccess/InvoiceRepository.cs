@@ -11,6 +11,11 @@ namespace Assignment_Create_a_database_and_access_it.Repository
     public class InvoiceRepository : IInvoiceRepository
     {
         public string ConnectionString { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets the highest spenders based on invoice records.
+        /// </summary>
+        /// <returns>IEnumerable containing customerSpender object.</returns>
         public IEnumerable<CustomerSpender> GetHighestSpenders()
         {
             using var connection = new SqlConnection(ConnectionString);
