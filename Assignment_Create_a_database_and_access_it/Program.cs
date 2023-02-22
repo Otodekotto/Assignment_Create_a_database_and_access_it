@@ -10,7 +10,7 @@ namespace Assignment_Create_a_database_and_access_it
         {
 
             var customerRepository = new CustomerRepository { ConnectionString = GetConnectionString() };
-            var customerRepositoryv2 = new InvoiceRepository { ConnectionString = GetConnectionString() };
+            var invoiceRepository = new InvoiceRepository { ConnectionString = GetConnectionString() };
             // Part 1
             var allCustomers = customerRepository.GetAll().ToList();
             foreach(var item in allCustomers)
@@ -54,7 +54,7 @@ namespace Assignment_Create_a_database_and_access_it
                 Console.WriteLine(item);
             }
             // Part 8
-            var highestSpender = customerRepositoryv2.GetHighestSpenders().ToList();
+            var highestSpender = invoiceRepository.GetHighestSpenders().ToList();
             foreach (var item in highestSpender)
             {
                 Console.WriteLine(item);
